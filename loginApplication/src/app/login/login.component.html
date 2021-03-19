@@ -1,11 +1,23 @@
 <h2>Login</h2>
-<form [FormGroup]="loginForm">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-       <label for ="username">Username</label>
+       <label for ="username">Username </label>
        <input type="text" formControlName="username"/>
+       <div *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">Enter valid username</div>
     </div>
     <div class="form-group">
-        <label for ="password">Password</label>
+        <label for ="password">Password </label>
         <input type="password" formControlName="password"/>
+        <div *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Enter valid password</div>
+    </div>
+    <div *ngIf="!loginForm.valid && loginForm.touched"> Enter valid credentials </div>
+    <div class="form-group">
+        <!--<button [disabled]="allow">Login</button>
+       <button><a routerLink="/register">Register</a></button>-->
+      <button (click)="onLoadHome()">Login</button>
+      <!--<nav>
+        <button><a routerLink="/home">Login</a></button>
+        <button><a routerLink="/register">Register</a></button>
+    </nav>-->
     </div>
 </form>
