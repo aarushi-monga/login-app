@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
  public loginForm :any;
- allow = false;
+ 
 
 
   constructor(private formBuilder: FormBuilder, private router: Router ) {}
