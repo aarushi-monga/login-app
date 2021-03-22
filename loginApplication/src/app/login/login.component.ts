@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- public loginForm :any;
+  public loginForm :any;
+  submitted = false;
+  loading= false;
  
-
-
-  constructor(private formBuilder: FormBuilder, private router: Router ) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
@@ -21,11 +21,18 @@ export class LoginComponent implements OnInit {
       password:['', Validators.required]
     })
   }
+
+  get f() { return this.loginForm.controls; }
+
   onSubmit(){
-    console.warn(this.loginForm.value);
+    this.submitted=true;
+    if(this.loginForm.invalid){
+    return;
   }
-  onLoadHome(){
+  this.loading=true;
+  this.router.navigate(['/home']);
+}}
+  /*onLoadHome(){
     this.router.navigate(['/home'])
-  
-  }
-}
+   }*/
+

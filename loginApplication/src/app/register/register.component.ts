@@ -12,7 +12,8 @@ export class RegisterComponent implements OnInit {
   public registerForm :any;
   submitted = false;
   loading= false; 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.registerForm=this.formBuilder.group({
@@ -37,9 +38,9 @@ export class RegisterComponent implements OnInit {
     }
     this.loading=true;
     this.router.navigate(['/login']);
-  }
+  }}
   
  /*onLoadLogin(){
     this.router.navigate(['/login']);
   }*/
-}
+

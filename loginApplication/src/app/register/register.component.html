@@ -2,11 +2,11 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     
     <div class="form-group">
-        <label for ="firstname">FirstName* </label>
-        <input type="text" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <label for ="firstname">FirstName </label>
+        <input type="text" formControlName="firstname" [ngClass]="{'is-invalid':submitted && f.firstName.errors }"/>
+        <!--<div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">-->
         <div *ngIf="submitted && f.firstName.errors.required">Required</div> 
-    </div></div>
+        </div>
 
      <div class="form-group">
         <label for ="lastname">LastName </label>
@@ -14,25 +14,25 @@
      </div>
     
      <div class="form-group">
-        <label for ="email">E-mail* </label>
+        <label for ="email">E-mail </label>
         <input type="text" formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}"/>
         <div *ngIf="submitted && f.email.errors.required">email required</div>
      </div>
      
      <div class="form-group">
-       <label for ="username">Username* </label>
+       <label for ="username">Username </label>
        <input type="text" formControlName="username" [ngClass]= "{'is-invalid':submitted && f.username.errors}" />
        <div *ngIf="submitted && f.username.errors.required">username required</div>
     </div>
     
     <div class="form-group">
-        <label for ="password">Password* </label>
+        <label for ="password">Password </label>
         <input type="password" formControlName="password" [ngClass]="{'is-invalid':submitted && f.password.errors}"/>
         <div *ngIf="submitted && f.password.errors.required">password required</div>
     </div>
     
     <div class="form-group">
-        <label for ="confirmpassword">Confirm Password* </label>
+        <label for ="confirmpassword">Confirm Password </label>
         <input type="password" formControlName="confirmpassword" [ngClass]="{'is-invalid':submitted && f.confirmpassword.errors}"/>
         <div *ngIf="submitted && f.confirmpassword.errors.required">confirmpassword required</div>
     </div>
