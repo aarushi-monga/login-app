@@ -20,7 +20,7 @@
      <div class="form-group">
         <label class="control-label col-sm-2" for ="email">E-mail </label>
         <div class="col-sm-10">
-        <input type="text" formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}"/>
+        <input type="email" formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}"/>
         <div *ngIf="submitted && f.email.errors.required">email required</div>
         </div> 
     </div><br>

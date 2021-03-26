@@ -17,12 +17,10 @@ public signupDetails : Array<any> =[
 
  //services---//
 public onSubmit(data: { username: string; email: string }) {  
-  this.signupDetails.push(this.signupDetails)
+  this.signupDetails.push(data)
   console.log("UserName : " + data.username);  
   console.log("Email Id : " + data.email);   
 } 
 } 
- /* *ngIf="loginForm.value && registerForm.value">
-    signupDetails.find(Array => Array.username==username) 
- */
+ 
 

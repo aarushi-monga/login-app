@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ServicesService } from '../services.service';// import services
+import { ServicesService } from '../services.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,6 @@ export class LoginComponent implements OnInit {
   public loginForm :any;
   submitted = false;
   loading= false;
-  signupDetails: any;
-  
   
   constructor(private formBuilder: FormBuilder, private router: Router, private services: ServicesService){
     debugger
@@ -35,14 +33,14 @@ export class LoginComponent implements OnInit {
     return;}
 
    this.loading=true;
-   this.services.onSubmit(value);//services
+   //this.services.onSubmit(value);//services
    this.submitted=true;
-   let result = this.signupDetails.find((el: { username: any; }) => el.username === this.f.username);
-   if (Object.keys(result).length > 0) {
+   let result = this.services.signupDetails.find((el:any) => el.email === value.email);
+   if (result && Object.keys(result).length > 0) {
     this.router.navigate(['/home']);
  }
   else {
-  this.router.navigate(['/register']);
+  this.router.navigate(['/']);
   }
 }}
 
