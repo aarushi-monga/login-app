@@ -19,12 +19,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm=this.formBuilder.group({
-      firstname:['', Validators.required],
+      firstname:['', [Validators.required]],
       lastname:[''],
-      email:['', Validators.required],
-      username:['', Validators.required],
-      password:['',Validators.required, Validators.minLength(3)],
-      confirmpassword:['',Validators.required]
+      email:['', [Validators.required, Validators.email]],
+      username:['', [Validators.required, Validators.nullValidator]],
+      password:['',[Validators.required, Validators.minLength(3)]],
+      confirmpassword:['',[Validators.required]]
     }//,{
       //validator: MustMatch('password', 'confirmPassword')}
       )
@@ -33,18 +33,17 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit(value:{ username: string; email: string; }){
-    
+    debugger
     //console.warn(this.registerForm.value);
     if (this.registerForm.invalid) {
       return;
     }
     this.loading=true;
-    this.services.onSubmit(value);//services
+    this.services.onSubmit(value);
     this.submitted = true;
     this.router.navigate(['/login']);
   }}
   
- /*onLoadLogin(){
-    this.router.navigate(['/login']);
-  }*/
+
+
 

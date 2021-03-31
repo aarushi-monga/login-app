@@ -6,6 +6,7 @@
        <label class="control-label col-sm-2" for ="username">Username </label>
        <div class="col-sm-10">
        <input type="text" formControlName="username" [ngClass]="{'is-invalid':submitted && f.username.errors}"/>
+        
        <div *ngIf="submitted && f.username.errors.required">username required</div>
        <!--<div *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">Enter valid username</div>-->
        </div>
@@ -25,7 +26,8 @@
         <div class="col-sm-10">
         <input type="text" formControlName="email" [ngClass]="{'is-invalid':submitted && f.email.errors}"/>
         <div *ngIf="submitted && f.email.errors.required">email required</div>
-        </div>
+        <div *ngIf="f.email.errors.email">emailformat</div>
+    </div>
     </div><br>
    
     <!--<div *ngIf="!loginForm.valid && loginForm.touched"> Enter valid credentials </div>-->

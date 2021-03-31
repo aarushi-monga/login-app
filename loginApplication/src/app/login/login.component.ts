@@ -14,14 +14,14 @@ export class LoginComponent implements OnInit {
   loading= false;
   
   constructor(private formBuilder: FormBuilder, private router: Router, private services: ServicesService){
-    debugger
+    //debugger
   }
 
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
-      username:['', Validators.required],
-      password:['', Validators.required],
-      email:['', Validators.required]
+      username:['', [Validators.required]],
+      password:['', [Validators.required]],
+      email:['', [Validators.required,Validators.email]]
     })
   }
 
@@ -44,15 +44,4 @@ export class LoginComponent implements OnInit {
   }
 }}
 
- /* if(this.signupDetails.find((Array: { username: any; }) => Array.username == this.loginForm.values)){
-   this.router.navigate(['/home']);
-    }
-   else{
-     this.router.navigate(['/register']); 
-   }*/
-
-
-  /*onLoadHome(){
-    this.router.navigate(['/home'])
-   }*/
-
+ 

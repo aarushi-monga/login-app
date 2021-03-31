@@ -4,10 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ServicesService {
-public signupDetails : Array<any> =[
-  {username: "aarushi", email : "aarushim" },
-  {username : "himanshi", email : "himanshid" }
-];
+public signupDetails : Array<any> =[];
 
  constructor() { }
   showTodayDate() {

@@ -1,0 +1,29 @@
+h1{
+    text-align: center; 
+    font-weight: bold;
+}
+button{
+    float: right;
+}
+.img{
+    background-color: burlywood;
+   /* background-image: url(https://cdn.wallpapersafari.com/69/90/EZsxeJ.png);
+    background-repeat:no-repeat;
+    object-fit: cover;
+    height: 400px;
+    width: relative;*/
+}
+.footer{
+    padding:5px;
+    margin-top: 450px;
+    height: 40px;
+}
+footer p{
+    text-align: right;
+}
+.upload{
+    
+    width: 400px;
+    height: 400px;
+    border: solid 05px black;
+}

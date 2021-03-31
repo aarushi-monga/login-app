@@ -1,2 +1,16 @@
-<p>home works!</p>
-<button (click)="onLogout()">Logout</button>
+<div class="img">
+
+    <header>
+    <button (click)="onLogout()">Logout</button><br>
+    <hr>
+    </header>
+
+    <h1>WEB APPLICATION </h1>
+   <img class ="upload" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"><br>
+    <input type='file' (change)="onSelectFile($event)">
+   
+    <footer class="footer">
+    <hr>
+    <p>Helpline:0129-12345</p>
+    </footer>
+</div>
