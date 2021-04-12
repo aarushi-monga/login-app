@@ -10,10 +10,10 @@ const app = express();
 //const app = express();
 app.use(requireHTTPS);
 
-app.use(express.static(`./dist/<login-application.json>`));
+app.use(express.static(`./dist/login-application`));
 
 app.get(`/*`, function(req, res) {
-    res.sendFile(`index.html`, {root: `dist/<login-application.json>/`}
+    res.sendFile(`index.html`, {root: `dist/login-application/`}
   );
   });
   app.listen(process.env.PORT || 8080);
