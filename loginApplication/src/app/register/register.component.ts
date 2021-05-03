@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit(value:{ username: string; email: string; }){
-    debugger
+    //debugger
     //console.warn(this.registerForm.value);
     if (this.registerForm.invalid) {
       return;
